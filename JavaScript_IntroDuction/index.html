@@ -108,16 +108,125 @@
 
 		/* setInterval */
 		var i =0;
-		function intervalshow()
+		var tmrinterval = function intervalshow()
 		{
 			console.log(i++);
 		};
 
+		var j =100;
+
+		/* timeoutshow */
+		function timeoutshow()
+		{
+			j++;
+			console.log("j = " + j );
+		};		
+
 		setInterval(function()
 		{
-			intervalshow();
+			tmrinterval();
 		},1000)
 
+		setTimeout(function()
+		{
+			timeoutshow();
+		},1000)
+
+
+/*
+		while(true)
+		{
+			if(i>100)
+			{
+				clearInterval(timerI);
+			}
+		}
+*/
+
+        /*
+            タイマー処理
+                setInterval
+                setTimeout
+        */
+        var k = 200;
+        function show() {
+            console.log(k++);
+            var tid = setTimeout(function() {
+                show();
+            }, 1000);
+            if (k > 203) {
+                clearTimeout(tid);
+
+            }
+        }
+        show();
+
+
+        clearInterval(tmrinterval);
+
+        /*
+            配列: グループ化されたデータ
+        */
+        
+        var score = [100, 'aaa', 500, "taguchi"];
+        // console.log(score[0]); // 添字 0, 1, ...
+        score[2] = 400;
+        console.log(score);
+        
+        var score1 = [
+        				['a',1,"bb",4],[5,6,7,"hhhh"]
+        			];
+
+        console.log(score1[1][2]);
+
+        /*
+            オブジェクト
+                名前と値                
+        */
+        var user = {
+            name: "miya", // プロパティ
+            age: 36,
+            blood:'A',
+            disp:function(names){// メソッド
+            	console.log("名前は" + names + " 血液型" + this.blood);// this はこのオブジェクト自身を指す
+            }
+        };
+
+        console.log(user["name"]);
+        console.log(user.age);
+        console.log(user);
+        user.blood = 'Z';
+        console.log(user.blood);
+
+        user.disp("satoshi");
+
+
+        /*
+            組み込みオブジェクト
+ 
+            - String
+            - Array
+            - Math
+            - Date
+        */
+        // var s = new String("abcde"); // Stringオブジェクト
+
+        var s = "abcde";	// 文字列リテラル
+        console.log("len=" + s.length);
+        console.log("replace=" + s.replace("a","123"));
+
+        // Array操作
+        var arrobj = new Array(100,"abc",300);
+
+        arrobj.unshift(1000);
+        console.log("unshift:" + arrobj);
+        arrobj.shift();
+        console.log("shift:" + arrobj);
+
+        arrobj.push(1000);
+        console.log("push:" + arrobj);
+        arrobj.pop();
+        console.log("pop:" + arrobj);
 
 
 	</script>
