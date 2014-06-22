@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScriptの練習</title>
+</head>
+<body>
+	<script src="myscript.js"></script>
+	<script>
+	    /*
+	    	複数行コメント
+	    */
+	    // aaaaa
+		console.log("hello world!");
+
+		var msg = "test string";
+
+		console.log(msg);
+
+		var a = 1,
+		    b = 2,
+		    c = 3;
+		console.log(a + b + c);
+
+		var d = 11;
+		var e = 3;
+
+		console.log("d+e=" + (d+e));
+		console.log("d+e=" + (d-e));
+		console.log("d+e=" + (d*e));
+		console.log("d+e=" + (d/e));
+		console.log("d+e=" + (d%e));
+
+		var strs;
+		strs = "hello";
+		console.log(strs);
+
+		// シングルコーテーションを文字として出力 
+		strs = 'hel\'lo';
+		console.log(strs);
+
+		strs = "hello" + "world";
+		console.log(strs);
+
+		// 文字の数字と数字とを足すと文字列連結になる
+		strs = "5" + 5;
+		console.log(strs);
+
+		var score = 50;
+		if (score > 69) 
+		{
+			console.log("OK");
+		}
+		else if (score > 40) 
+		{
+			console.log("soso......");
+		}
+		else
+		{
+			console.log("NG");
+		}
+
+
+
+		alert("こんにちわ");
+		var answer =  confirm("どうする？");
+		console.log(answer);
+
+
+		if (confirm("ほんとうに？？")) 
+		{
+			console.log("うん");
+		}
+		else
+		{
+			console.log("やっぱやめる");
+		}
+
+		var name = prompt("お名前は？","初期値だよ");
+		console.log(name);
+
+
+		function hello(names)
+		{
+			return "hello" + names;
+		}
+
+		var greet = hello("Tom");
+		console.log(greet);
+
+
+		/* 無名関数 ローカル変数 */
+		var mumei = function(nameval)	// 無名関数
+		{
+			var msg = "呼ばれました　" + nameval; // ローカル変数
+			return msg;
+		};
+
+		var disp1 = mumei("無名関数だよ")
+		console.log(disp1);
+
+		/* 即時関数 */
+		(function(namedata)
+		{
+			console.log("即時関数" + namedata);
+		})("　よびだし即時関数");
+
+
+		/* setInterval */
+		var i =0;
+		function intervalshow()
+		{
+			console.log(i++);
+		};
+
+		setInterval(function()
+		{
+			intervalshow();
+		},1000)
+
+
+
+	</script>
+</body>
+</html>
